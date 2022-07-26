@@ -12,15 +12,15 @@ function App() {
   const [error,setError]=useState("");
   const Login=details=>{
     console.log(details);
-    if(details.email==adminUser.email &&details.password==adminUser.password && details.name==adminUser.name)
+    if(details.email===adminUser.email &&details.password===adminUser.password && details.name===adminUser.name)
     {
       // console.log("Login sucessfull")
       setUser({name:details.name,email:details.email,password:details.password})
     }
-    else if(details.name!=adminUser.name){
+    else if(details.name!==adminUser.name){
       setError("Name Does not Match")
     }
-    else if(details.email!=adminUser.email){
+    else if(details.email!==adminUser.email){
       setError("Email Does not Match")
     }
     else {
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-     {(user.email!="")? (
+     {(user.email!=="")? (
       <div className="welcome">
         <h2>Welcome,<span>{user.name}</span></h2>
         <button onClick={Logout}>Logout</button>
